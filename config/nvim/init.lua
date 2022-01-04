@@ -94,11 +94,11 @@ runtime macros/matchit.vim
 
 augroup TrailingSpaces
   autocmd!
-  autocmd BufWritePre * :call StripTrailingWhitespaces()
+  autocmd BufWritePre * :call s:StripTrailingWhitespaces()
 augroup END
 
 " Strip trailing whitespace taken from Terry's vimrc
-function! StripTrailingWhitespaces()
+function! s:StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
