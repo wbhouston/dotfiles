@@ -9,8 +9,7 @@
         create: true
         glob: true
         path: config/*
-        relink: true
-    ~/.zshrc: zshrc
+    ~/.zshrc:
 
 - create:
     - ~/.vim/undo-history
@@ -18,4 +17,31 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim]
+  -
+    command: >
+        if which nvim >/dev/null 2>/dev/null; then
+          echo "nvim is already installed"
+        else
+          brew install neovim
+        fi
+    description: Install neovim
+    stdout: true
+  -
+    command: >
+        if [ -d ~/.local/share/nvim/site/pack/packer/start/packer.nvim ]; then
+          echo "packer is already installed";
+        else
+          git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+            ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        fi
+    description: Install packer for nvim
+    stdout: true
+  -
+    command: >
+        if type rg >/dev/null 2>/dev/null; then
+          echo "ripgrep is already installed"
+        else
+          brew install ripgrep
+        fi
+    description: Install ripgrep (telescope.vim dependency)
+    stdout: true

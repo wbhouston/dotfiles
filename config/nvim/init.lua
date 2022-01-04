@@ -5,8 +5,6 @@ let &packpath = &runtimepath
 " Plugins setup
 call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
   Plug 'scrooloose/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'https://github.com/tpope/vim-surround'
@@ -127,3 +125,17 @@ endfun
 require('mappings')
 require('argwrap')
 require('plugins')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<c-h>"] = "which_key"
+      },
+    },
+  },
+  pickers = {
+    live_grep = {
+      only_sort_text = true
+    },
+  },
+}
