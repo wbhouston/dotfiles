@@ -39,7 +39,6 @@ set hlsearch
 
 " Conquer of Completion
 let g:coc_global_extensions = [
-  \ 'coc-pairs',
   \ 'coc-snippets',
   \ 'coc-solargraph',
 \ ]
