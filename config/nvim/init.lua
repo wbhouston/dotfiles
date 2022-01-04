@@ -39,10 +39,6 @@ set tabstop=2
 set softtabstop=2
 set hlsearch
 
-
-:let g:NERDTreeWinSize=60
-:let g:NERDTreeMapHelp='g?'
-
 " Conquer of Completion
 let g:coc_global_extensions = [
   \ 'coc-pairs',
@@ -93,24 +89,6 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 " Run the Code Lens action on the current line.
 nmap <leader>cl  <Plug>(coc-codelens-action)
 
-
-" Lets me use zsh aliases in zshrc within vim
-" autocmd vimenter * let &shell='/bin/zsh'
-
-let mapleader=' '
-nnoremap <Leader>T :NERDTree<CR>
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-p> :FZF<cr>
-nnoremap <Leader>n :noh<cr>
-
-" ArgWrap stuff
-nnoremap <Leader>aw :ArgWrap<cr>
-let g:argwrap_padded_braces = '{'
-let g:argwrap_tail_comma = 1
-
 " Lemme use % for def/end
 runtime macros/matchit.vim
 
@@ -146,3 +124,5 @@ fun OpenWorkSession()
   endif
 endfun
 ]])
+require('mappings')
+require('argwrap')
