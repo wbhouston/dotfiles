@@ -49,11 +49,11 @@ let g:coc_global_extensions = [
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
       \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
-      \ s:check_back_space() ? "\<TAB>" :
+      \ CheckBackSpace() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
+function! CheckBackSpace() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
@@ -94,11 +94,11 @@ runtime macros/matchit.vim
 
 augroup TrailingSpaces
   autocmd!
-  autocmd BufWritePre * :call s:StripTrailingWhitespaces()
+  autocmd BufWritePre * :call StripTrailingWhitespaces()
 augroup END
 
 " Strip trailing whitespace taken from Terry's vimrc
-function! s:StripTrailingWhitespaces()
+function! StripTrailingWhitespaces()
     " Preparation: save last search, and cursor position.
     let _s=@/
     let l = line(".")
@@ -126,3 +126,4 @@ endfun
 ]])
 require('mappings')
 require('argwrap')
+require('plugins')
