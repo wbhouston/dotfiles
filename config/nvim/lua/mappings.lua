@@ -1,5 +1,3 @@
-vim.g.mapleader = ' '
-
 function map(mode, shortcut, command)
   vim.api.nvim_set_keymap(mode, shortcut, command, { noremap = true, silent = true })
 end
@@ -12,6 +10,7 @@ function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
+vim.g.mapleader = ' '
 nmap('<leader>n', ':noh<cr>')
 nmap('<c-j>', '<c-w>j')
 nmap('<c-k>', '<c-w>k')
