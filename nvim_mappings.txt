@@ -1,0 +1,253 @@
+n  <C-H>       * <C-W>h
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <NL>        * <C-W>j
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <C-K>       * <C-W>k
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <C-L>       * <C-W>l
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <C-P>       * :Telescope find_files<CR>
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <Space>N    * :NERDTree<CR>
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <Space>aw   * :ArgWrap<CR>
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <Space><C-P> * :Telescope live_grep<CR>
+	Last set from ~/Dotfiles/config/nvim/init.lua
+n  <Space>n    * :noh<CR>
+	Last set from ~/Dotfiles/config/nvim/init.lua
+o  %             <Plug>(MatchitOperationForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 60
+x  %             <Plug>(MatchitVisualForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 58
+n  %             <Plug>(MatchitNormalForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 56
+n  '?          & :<C-U>echo ":Start" dispatch#start_focus(v:count > 1 ? 0 : v:count ? line(".") : -1)<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  '!          & <SNR>71_:.Start!
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  '<Space>    & <SNR>71_:.Start<Space>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  '<CR>       & <SNR>71_:.Start<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+x  S             <Plug>VSurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 608
+n  Y           * y$
+o  [%            <Plug>(MatchitOperationMultiBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 75
+x  [%            <Plug>(MatchitVisualMultiBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 73
+n  [%            <Plug>(MatchitNormalMultiBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 71
+o  ]%            <Plug>(MatchitOperationMultiForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 76
+x  ]%            <Plug>(MatchitVisualMultiForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 74
+n  ]%            <Plug>(MatchitNormalMultiForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 72
+n  `?          & <SNR>71_:.FocusDispatch<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  `!          & <SNR>71_:.Dispatch!
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  `<Space>    & <SNR>71_:.Dispatch<Space>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  `<CR>       & <SNR>71_:.Dispatch<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+x  a%            <Plug>(MatchitVisualTextObject)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 80
+n  cS            <Plug>CSurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 602
+n  cs            <Plug>Csurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 601
+n  ds            <Plug>Dsurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 600
+x  gx            <Plug>NetrwBrowseXVis
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/plugin/netrwPlugin.vim line 88
+n  gx            <Plug>NetrwBrowseX
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/plugin/netrwPlugin.vim line 82
+o  g%            <Plug>(MatchitOperationBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 61
+x  g%            <Plug>(MatchitVisualBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 59
+n  g%            <Plug>(MatchitNormalBackward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 57
+n  g`?         & :<C-U>echo ":Spawn" dispatch#spawn_focus(v:count > 1 ? 0 : v:count ? line(".") : -1)<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g`!         & <SNR>71_:.Spawn!
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g`<Space>   & <SNR>71_:.Spawn<Space>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g`<CR>      & <SNR>71_:.Spawn<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g'?         & :<C-U>echo ":Spawn" dispatch#spawn_focus(v:count > 1 ? 0 : v:count ? line(".") : -1)<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g'!         & <SNR>71_:.Spawn!
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g'<Space>   & <SNR>71_:.Spawn<Space>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  g'<CR>      & <SNR>71_:.Spawn<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+x  gS            <Plug>VgSurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 609
+n  m?          & :<C-U>echo ":Dispatch" dispatch#make_focus(v:count > 1 ? 0 : v:count ? line(".") : -1)<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  m!          & <SNR>71_:.Make!
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  m<Space>    & <SNR>71_:.Make<Space>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  m<CR>       & <SNR>71_:.Make<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 55
+n  y<C-G>      & :<C-U>call setreg(v:register, fugitive#Object(@%))<CR>
+	Last set from ~/.local/share/nvim/site/pack/packer/start/vim-fugitive/plugin/fugitive.vim line 695
+n  ySS           <Plug>YSsurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 607
+n  ySs           <Plug>YSsurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 606
+n  yss           <Plug>Yssurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 605
+n  yS            <Plug>YSurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 604
+n  ys            <Plug>Ysurround
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 603
+v  <Plug>(coc-snippets-select) * :<C-U>call coc#rpc#notify('doKeymap', ['snippets-select'])<CR>
+x  <Plug>(coc-convert-snippet) * :<C-U>call coc#rpc#notify('doKeymap', ['convert-snippet'])<CR>
+n  <Plug>PlenaryTestFile * :lua require('plenary.test_harness').test_directory(vim.fn.expand("%:p"))<CR>
+	Last set from ~/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim line 9
+x  <Plug>NetrwBrowseXVis * :<C-U>call netrw#BrowseXVis()<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/plugin/netrwPlugin.vim line 90
+n  <Plug>NetrwBrowseX * :call netrw#BrowseX(netrw#GX(),netrw#CheckIfRemote(netrw#GX()))<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/plugin/netrwPlugin.vim line 84
+x  <Plug>(MatchitVisualTextObject)   <Plug>(MatchitVisualMultiBackward)o<Plug>(MatchitVisualMultiForward)
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 79
+o  <Plug>(MatchitOperationMultiForward) * :<C-U>call matchit#MultiMatch("W",  "o")<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 69
+o  <Plug>(MatchitOperationMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "o")<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 68
+x  <Plug>(MatchitVisualMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>m'gv``
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 67
+x  <Plug>(MatchitVisualMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>m'gv``
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 66
+n  <Plug>(MatchitNormalMultiForward) * :<C-U>call matchit#MultiMatch("W",  "n")<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 65
+n  <Plug>(MatchitNormalMultiBackward) * :<C-U>call matchit#MultiMatch("bW", "n")<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 64
+o  <Plug>(MatchitOperationBackward) * :<C-U>call matchit#Match_wrapper('',0,'o')<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 54
+o  <Plug>(MatchitOperationForward) * :<C-U>call matchit#Match_wrapper('',1,'o')<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 53
+x  <Plug>(MatchitVisualBackward) * :<C-U>call matchit#Match_wrapper('',0,'v')<CR>m'gv``
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 52
+x  <Plug>(MatchitVisualForward) * :<C-U>call matchit#Match_wrapper('',1,'v')<CR>m'gv``
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 51
+n  <Plug>(MatchitNormalBackward) * :<C-U>call matchit#Match_wrapper('',0,'n')<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 50
+n  <Plug>(MatchitNormalForward) * :<C-U>call matchit#Match_wrapper('',1,'n')<CR>
+	Last set from /usr/local/Cellar/neovim/0.6.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim line 49
+n  <Plug>(ArgWrapToggle) * :call argwrap#toggle() | silent! call repeat#set("\<Plug>(ArgWrapToggle)")<CR>
+	Last set from ~/.vim/plugged/vim-argwrap/plugin/argwrap.vim line 33
+n  <SNR>71_:.  & :<C-R>=getcmdline() =~ ',' ? "\0250" : ""<CR>
+	Last set from ~/.vim/plugged/vim-dispatch/plugin/dispatch.vim line 58
+v  <Plug>VgSurround * :<C-U>call <SNR>70_opfunc(visualmode(),visualmode() ==# 'V' ? 0 : 1)<CR>
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 595
+v  <Plug>VSurround * :<C-U>call <SNR>70_opfunc(visualmode(),visualmode() ==# 'V' ? 1 : 0)<CR>
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 594
+n  <Plug>YSurround * <SNR>70_opfunc2('setup')
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 593
+n  <Plug>Ysurround * <SNR>70_opfunc('setup')
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 592
+n  <Plug>YSsurround * <SNR>70_opfunc2('setup').'_'
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 591
+n  <Plug>Yssurround * '^'.v:count1.<SNR>70_opfunc('setup').'g_'
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 590
+n  <Plug>CSurround * :<C-U>call <SNR>70_changesurround(1)<CR>
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 589
+n  <Plug>Csurround * :<C-U>call <SNR>70_changesurround()<CR>
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 588
+n  <Plug>Dsurround * :<C-U>call <SNR>70_dosurround(<SNR>70_inputtarget())<CR>
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 587
+n  <Plug>SurroundRepeat * .
+	Last set from ~/.vim/plugged/vim-surround/plugin/surround.vim line 586
+o  <Plug>(coc-classobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, '', ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 583
+o  <Plug>(coc-classobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, '', ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 582
+v  <Plug>(coc-classobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, visualmode(), ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 581
+v  <Plug>(coc-classobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, visualmode(), ['Interface', 'Struct', 'Class'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 580
+o  <Plug>(coc-funcobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, '', ['Method', 'Function'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 578
+o  <Plug>(coc-funcobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, '', ['Method', 'Function'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 577
+v  <Plug>(coc-funcobj-a) * :<C-U>call CocAction('selectSymbolRange', v:false, visualmode(), ['Method', 'Function'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 576
+v  <Plug>(coc-funcobj-i) * :<C-U>call CocAction('selectSymbolRange', v:true, visualmode(), ['Method', 'Function'])<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 575
+n  <Plug>(coc-cursors-position) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'position', 'n')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 573
+n  <Plug>(coc-cursors-word) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'word', 'n')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 572
+v  <Plug>(coc-cursors-range) * :<C-U>call CocAction('cursorsSelect', bufnr('%'), 'range', visualmode())<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 571
+n  <Plug>(coc-cursors-operator) * :<C-U>set operatorfunc=<SNR>41_CursorRangeFromSelected<CR>g@
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 570
+n  <Plug>(coc-refactor) * :<C-U>call       CocActionAsync('refactor')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 567
+n  <Plug>(coc-command-repeat) * :<C-U>call       CocAction('repeatCommand')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 566
+n  <Plug>(coc-float-jump) * :<C-U>call       coc#float#jump()<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 565
+n  <Plug>(coc-float-hide) * :<C-U>call       coc#float#close_all()<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 564
+n  <Plug>(coc-fix-current) * :<C-U>call       CocActionAsync('doQuickfix')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 563
+n  <Plug>(coc-openlink) * :<C-U>call       CocActionAsync('openLink')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 562
+n  <Plug>(coc-references-used) * :<C-U>call       CocActionAsync('jumpUsed')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 561
+n  <Plug>(coc-references) * :<C-U>call       CocActionAsync('jumpReferences')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 560
+n  <Plug>(coc-type-definition) * :<C-U>call       CocActionAsync('jumpTypeDefinition')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 559
+n  <Plug>(coc-implementation) * :<C-U>call       CocActionAsync('jumpImplementation')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 558
+n  <Plug>(coc-declaration) * :<C-U>call       CocActionAsync('jumpDeclaration')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 557
+n  <Plug>(coc-definition) * :<C-U>call       CocActionAsync('jumpDefinition')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 556
+n  <Plug>(coc-diagnostic-prev-error) * :<C-U>call       CocActionAsync('diagnosticPrevious', 'error')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 555
+n  <Plug>(coc-diagnostic-next-error) * :<C-U>call       CocActionAsync('diagnosticNext',     'error')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 554
+n  <Plug>(coc-diagnostic-prev) * :<C-U>call       CocActionAsync('diagnosticPrevious')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 553
+n  <Plug>(coc-diagnostic-next) * :<C-U>call       CocActionAsync('diagnosticNext')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 552
+n  <Plug>(coc-diagnostic-info) * :<C-U>call       CocActionAsync('diagnosticInfo')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 551
+n  <Plug>(coc-format) * :<C-U>call       CocActionAsync('format')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 550
+n  <Plug>(coc-format-selected) * :<C-U>set        operatorfunc=<SNR>41_FormatFromSelected<CR>g@
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 549
+n  <Plug>(coc-rename) * :<C-U>call       CocActionAsync('rename')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 548
+n  <Plug>(coc-codeaction-cursor) * :<C-U>call       CocActionAsync('codeAction',         'cursor')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 547
+n  <Plug>(coc-codeaction-line) * :<C-U>call       CocActionAsync('codeAction',         'line')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 546
+n  <Plug>(coc-codeaction) * :<C-U>call       CocActionAsync('codeAction',         '')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 545
+n  <Plug>(coc-codeaction-selected) * :<C-U>set        operatorfunc=<SNR>41_CodeActionFromSelected<CR>g@
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 544
+v  <Plug>(coc-codeaction-selected) * :<C-U>call       CocActionAsync('codeAction',         visualmode())<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 543
+v  <Plug>(coc-format-selected) * :<C-U>call       CocActionAsync('formatSelected',     visualmode())<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 542
+n  <Plug>(coc-codelens-action) * :<C-U>call       CocActionAsync('codeLensAction')<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 541
+n  <Plug>(coc-range-select) * :<C-U>call       CocActionAsync('rangeSelect',     '', v:true)<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 540
+v  <Plug>(coc-range-select-backward) * :<C-U>call       CocActionAsync('rangeSelect',     visualmode(), v:false)<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 539
+v  <Plug>(coc-range-select) * :<C-U>call       CocActionAsync('rangeSelect',     visualmode(), v:true)<CR>
+	Last set from ~/.vim/plugged/coc.nvim/plugin/coc.vim line 538
