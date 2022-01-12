@@ -67,8 +67,8 @@ autocmd VimEnter * nested call OpenWorkSession()
 fun OpenWorkSession()
   if argc() == 0 && !exists('s:std_in')
     tabedit ~/Notes/general_notes/nvim_notes.md
-    MarkdownPreview
     lcd ~/Notes
+    MarkdownPreview
     call timer_start(1000, { tid -> execute('tabnext') })
   endif
 endfun
@@ -78,6 +78,7 @@ endfun
 require('mappings')
 
 require('argwrap')
+require('coc')
 require('nerdtree')
 require('plugins')
 require('telescope').setup{
