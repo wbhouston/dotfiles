@@ -14,9 +14,22 @@
 - create:
     - ~/.vim/undo-history
     - ~/local/share/nvim/site/pack/packer/start/packer.nvim
+    - ~/local/nerd-fonts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    command: >
+        if [ -d ~/.local/nerd-fonts/.git ]; then
+          echo "NerdFonts already installed";
+        else
+          git clone --filter=blob:none --sparse git@github.com:ryanoasis/nerd-fonts ~/.local/nerd-fonts &&
+          (cd ~/.local/nerd-fonts && git sparse-checkout add patched-fonts/VictorMono && ./install.sh VictorMono) &&
+          echo "CHANGE TERMINAL FONT!!!!!!!!!!!!"
+
+        fi
+    description: Install Patched Font VictorMono
+    stdout: true
   -
     command: >
         if which nvim >/dev/null 2>/dev/null; then
