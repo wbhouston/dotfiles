@@ -62,23 +62,21 @@ endfunction
 " open blank session on enter
 " VimEnter is nested so that bufenter/whatever is called for the notes
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * nested call OpenWorkSession()
 
 fun OpenWorkSession()
   if argc() == 0 && !exists('s:std_in')
+    terminal
     tabnew
+    terminal
     vsp
-    tabedit ~/Notes/general_notes/nvim_notes.md
-    lcd ~/Notes
-    MarkdownPreview
-    call timer_start(1000, { tid -> execute('tabnext') })
+    terminal
   endif
 endfun
 ]])
 
 -- mappings must come first to redefine the leader and define map functions
 require('mappings')
-
+require('tools')
 require('argwrap')
 require('coc')
 require('nerdtree')
@@ -109,10 +107,10 @@ require('lualine').setup {
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
-    lualine_y = {'progress'},
+    lualine_b = {'filename'},
+    lualine_c = {'branch', 'diff', 'diagnostics'},
+    lualine_x = {},
+    lualine_y = {},
     lualine_z = {'location'}
   },
   inactive_sections = {

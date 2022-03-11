@@ -20,13 +20,14 @@ end
 
 vim.g.mapleader = ' '
 nmap('<leader>n', ':noh<cr>')
-nmap('<c-j>', '<c-w>j')
-nmap('<c-k>', '<c-w>k')
-nmap('<c-h>', '<c-w>h')
-nmap('<c-l>', '<c-w>l')
+nmap('<c-j>', '<c-\\><c-n><c-w>j')
+nmap('<c-k>', '<c-\\><c-n><c-w>k')
+nmap('<c-h>', '<c-\\><c-n><c-w>h')
+nmap('<c-l>', '<c-\\><c-n><c-w>l')
 nmap('<c-p>', ':Telescope find_files<cr>')
 nmap('<leader><c-p>', ':Telescope live_grep<cr>')
 nmap('<leader>tb', ':Telescope buffers<cr>')
 nmap('<leader>tg', ':Telescope live_grep<cr>')
 nmap('<leader>tf', ':Telescope find_files<cr>')
+-- nmap('<leader>sr', '
 -- nmap('', '')

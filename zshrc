@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# my stuff
+export VERBOSE_TESTS=true
+
 source $ZSH/oh-my-zsh.sh
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
@@ -114,9 +117,10 @@ alias master='git checkout master'
 alias production='git checkout production'
 alias resource='source ~/.zshrc'
 alias docs='cd ~/Code/val-doc-storage'
+alias perm='git checkout feature-permission-redesign && git pull'
 alias ggpush='git push -u origin $(git_current_branch)'
 
-alias gnotes='cd ~/Notes && cp ~/.zshrc dotfiles && cp ~/.vimrc dotfiles && cp ~/.config/nvim/init.vim dotfiles && git add -A && git commit -m "notes" && git push && cd -'
+alias gnotes='cd ~/Notes && git add -A && git commit -m "notes" && git push && cd -'
 alias rc='bundle exec rails console'
 alias rgrep='grep -r'
 alias gprune='git remote update --prune'
