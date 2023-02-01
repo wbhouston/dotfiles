@@ -1,0 +1,30 @@
+snippet clar class .. attr_reader .. initialize .. end
+	class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		attr_reader(${2:variables})
+
+		def initialize(${2/:\(\w*\) \?/\1:/g})
+			${2/:\(\w*\),\? \?/@\1 = \1\n/g}
+		end
+	end
+
+snippet rspec require .. describe .. end
+	# frozen_string_literal: true
+
+	require 'rails_helper'
+
+	describe ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`} do
+	end
+snippet rcon
+	context '${1}' do
+		${2}
+	end
+snippet rit
+	it '${1}' do
+		${2}
+	end
+snippet @read
+	@${1} = ${1}
+snippet #frozen
+	# frozen_string_literal: true
+
+	${1}

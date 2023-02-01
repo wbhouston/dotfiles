@@ -105,6 +105,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # my stuff
+# Rails tests print out a lot of stuff, including puts I add
 export VERBOSE_TESTS=true
 
 source $ZSH/oh-my-zsh.sh
@@ -113,7 +114,8 @@ alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
 export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
 eval "$(rbenv init -)"
 alias foredev='bundle exec foreman start -f ./Procfile.dev'
-alias master='git checkout master'
+alias master='git checkout main'
+alias main='git checkout main'
 alias production='git checkout production'
 alias resource='source ~/.zshrc'
 alias docs='cd ~/Code/val-doc-storage'
@@ -123,8 +125,18 @@ alias ggpush='git push -u origin $(git_current_branch)'
 alias gnotes='cd ~/Notes && git add -A && git commit -m "notes" && git push && cd -'
 alias rc='bundle exec rails console'
 alias rgrep='grep -r'
+alias rsp='bundle exec rspec'
+alias rspq='VERBOSE_TESTS=false bundle exec rspec'
 alias gprune='git remote update --prune'
 alias gbranch='git --no-pager branch'
+
+alias 'rdbm'='rake db:migrate RAILS_ENV=development'
+alias 'rdbmt'='rake db:migrate RAILS_ENV=test'
+alias 'rdbr'='rake db:rollback RAILS_ENV=development'
+alias 'rdbrt'='rake db:rollback RAILS_ENV=test'
+
+alias 'property_rollback'='bin/rake property_onboarding:rollback && rake db:migrate:down VERSION=20220318142326 && rake db:migrate:down VERSION=20220321151403 && gco db/migrate && gco db/structure.sql && gco lib/tasks/property_onboarding.rake'
+alias 'property_migrate'='rdbm && bin/rake property_onboarding:migrate_one_time_charge_to_polymorphic && bin/rake property_onboarding:migrate_feature_set_to_polymorphic && gco db/structure.sql'
 
 alias vi='nvim'
 
@@ -151,3 +163,5 @@ function strlen {
 alias whitespace="sed 's/ /·/g;s/\t/￫/g;s/\r/§/g;s/$/¶/g'"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES

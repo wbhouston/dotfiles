@@ -16,6 +16,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'slim-template/vim-slim'
   Plug 'flazz/vim-colorschemes'
   Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+  Plug 'dcampos/nvim-snippy'
+  Plug 'honza/vim-snippets'
+  Plug 'TamaMcGlinn/quickfixdd'
 call plug#end()
 
 colorscheme gruvbox
@@ -36,6 +39,7 @@ set shiftwidth=2
 set tabstop=2
 set softtabstop=2
 set hlsearch
+set runtimepath+='~/.vim/snippets'
 
 " Lemme use % for def/end
 runtime macros/matchit.vim
@@ -124,3 +128,14 @@ require('lualine').setup {
   tabline = {},
   extensions = {}
 }
+require('snippy').setup({
+    mappings = {
+        is = {
+            ['<tab>'] = 'expand_or_advance',
+            ['<s-tab>'] = 'previous',
+        },
+        nx = {
+            ['<leader>x'] = 'cut_text',
+        },
+    },
+})

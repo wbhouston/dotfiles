@@ -1,0 +1,6 @@
+snippet clar class .. attr_reader .. initialize .. end
+	class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+		attr_reader(${1:variables})
+
+		end
+	end

@@ -29,5 +29,10 @@ nmap('<leader><c-p>', ':Telescope live_grep<cr>')
 nmap('<leader>tb', ':Telescope buffers<cr>')
 nmap('<leader>tg', ':Telescope live_grep<cr>')
 nmap('<leader>tf', ':Telescope find_files<cr>')
+nmap('<leader>q', ':bp<bar>sp<bar>bn<bar>bd<cr>')
 -- nmap('<leader>sr', '
 -- nmap('', '')
+--
+vim.cmd([[
+autocmd FileType qf map <buffer> dd :RemoveQFItem<c-r>
+]])
