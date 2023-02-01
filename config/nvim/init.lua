@@ -4,7 +4,6 @@ let &packpath = &runtimepath
 
 " Plugins setup
 call plug#begin('~/.vim/plugged')
-  Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   Plug 'scrooloose/nerdtree' |
     \ Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'https://github.com/tpope/vim-surround'
@@ -44,6 +43,9 @@ set runtimepath+='~/.vim/snippets'
 " Lemme use % for def/end
 runtime macros/matchit.vim
 
+" Prevent LSP from opening a preview window
+set completeopt=menuone,noinsert,noselect
+
 augroup TrailingSpaces
   autocmd!
   autocmd BufWritePre * :call StripTrailingWhitespaces()
@@ -82,7 +84,6 @@ endfun
 require('mappings')
 require('tools')
 require('argwrap')
-require('coc')
 require('nerdtree')
 require('plugins')
 require('telescope').setup{
@@ -128,6 +129,7 @@ require('lualine').setup {
   tabline = {},
   extensions = {}
 }
+
 require('snippy').setup({
     mappings = {
         is = {
@@ -139,3 +141,33 @@ require('snippy').setup({
         },
     },
 })
+
+local on_attach = function(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
+  -- Mappings.
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+  vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, bufopts)
+  vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
+  vim.keymap.set('n', '<leader>wl', function()
+    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
+  end, bufopts)
+  vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
+  vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, bufopts)
+  vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+  vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+require('lspconfig').solargraph.setup(
+  {
+    on_attach = on_attach
+  }
+)
