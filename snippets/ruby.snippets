@@ -6,7 +6,6 @@ snippet clar class .. attr_reader .. initialize .. end
 			${2/:\(\w*\),\? \?/@\1 = \1\n/g}
 		end
 	end
-
 snippet rspec require .. describe .. end
 	# frozen_string_literal: true
 
@@ -21,6 +20,17 @@ snippet rcon
 snippet rit
 	it '${1}' do
 		${2}
+	end
+snippet worker
+	# frozen_string_literal: true
+
+	module Workers
+		class ${1:`substitute(vim_snippets#Filename(), '\(_\|^\)\(.\)', '\u\2', 'g')`}
+			include Sidekiq::Worker
+
+			def perform(${2})
+			end
+		end
 	end
 snippet @read
 	@${1} = ${1}

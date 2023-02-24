@@ -22,7 +22,11 @@ call plug#end()
 
 colorscheme gruvbox
 
+hi DiagnosticInfo ctermfg=239 ctermbg=109 guifg=#504945 guibg=#83a598
+hi DiagnosticError ctermfg=167 ctermbg=235 gui=bold,reverse guifg=#fb4934 guibg=bg
+
 " General Formatting
+set mouse=
 set backspace=2
 set ruler
 set textwidth=80
@@ -79,6 +83,10 @@ fun OpenWorkSession()
   endif
 endfun
 ]])
+
+vim.o.updatetime = 250
+vim.cmd [[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]]
+vim.diagnostic.config({virtual_text = false})
 
 -- mappings must come first to redefine the leader and define map functions
 require('mappings')
@@ -163,6 +171,22 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+
+  -- from https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
+  vim.api.nvim_create_autocmd("CursorHold", {
+  buffer = bufnr,
+  callback = function()
+    local opts = {
+      focusable = false,
+      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+      border = 'rounded',
+      source = 'always',
+      prefix = ' ',
+      scope = 'cursor',
+    }
+    vim.diagnostic.open_float(nil, opts)
+  end
+})
 end
 
 require('lspconfig').solargraph.setup(
