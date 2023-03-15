@@ -10,10 +10,3 @@ function imap(shortcut, command)
   map('i', shortcut, command)
 end
 
-function write_mappings_to_file()
-  vim.cmd([[
-    :redir! > ~/Dotfiles/nvim_mappings.txt
-    :silent verbose map
-    :redir END
-  ]])
-end

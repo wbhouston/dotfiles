@@ -1,8 +1,17 @@
+function write_mappings_to_file()
+  vim.cmd([[
+    :redir! > ~/Dotfiles/nvim_mappings.txt
+    :silent verbose map
+    :redir END
+  ]])
+end
+
 nmap('<leader>n', ':noh<cr>')
 nmap('<c-j>', '<c-\\><c-n><c-w>j')
 nmap('<c-k>', '<c-\\><c-n><c-w>k')
 nmap('<c-h>', '<c-\\><c-n><c-w>h')
 nmap('<c-l>', '<c-\\><c-n><c-w>l')
+
 nmap('<leader>ta', ':Telescope find_files<cr>')
 nmap('<leader><c-p>', ':Telescope live_grep<cr>')
 nmap('<leader>tb', ':Telescope buffers<cr>')
