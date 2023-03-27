@@ -1,9 +1,12 @@
+vim.o.breakindent = false
 vim.o.colorcolumn = '+1,+5'
+vim.o.expandtab = true
 vim.o.hlsearch = true
 vim.o.mouse = false
 vim.o.scrolloff = 5
 vim.o.softtabstop = 2
 vim.o.splitbelow = true
+vim.o.tabstop = 2
 vim.o.termguicolors = false
 vim.o.textwidth = 80
 vim.o.title = true
