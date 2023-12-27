@@ -7,6 +7,7 @@ export ZSH="/Users/williamhouston/.oh-my-zsh"
 # colorstuff
 export COLORTERM="truecolor"
 export BAT_THEME="gruvbox-dark"
+export THOR_MERGE='nvim -d $2 $1'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -121,6 +122,7 @@ alias resource='source ~/.zshrc'
 alias docs='cd ~/Code/val-doc-storage'
 alias perm='git checkout feature-permission-redesign && git pull'
 alias ggpush='git push -u origin $(git_current_branch)'
+alias bump='bundle update'
 
 alias gnotes='cd ~/Notes && git add -A && git commit -m "notes" && git push && cd -'
 alias rc='bundle exec rails console'
@@ -135,8 +137,7 @@ alias 'rdbmt'='rake db:migrate RAILS_ENV=test'
 alias 'rdbr'='rake db:rollback RAILS_ENV=development'
 alias 'rdbrt'='rake db:rollback RAILS_ENV=test'
 
-alias 'property_rollback'='bin/rake property_onboarding:rollback && rake db:migrate:down VERSION=20220318142326 && rake db:migrate:down VERSION=20220321151403 && gco db/migrate && gco db/structure.sql && gco lib/tasks/property_onboarding.rake'
-alias 'property_migrate'='rdbm && bin/rake property_onboarding:migrate_one_time_charge_to_polymorphic && bin/rake property_onboarding:migrate_feature_set_to_polymorphic && gco db/structure.sql'
+alias 'as_migrate_down'='bundle exec rake db:migrate:down VERSION=20230623191918 && bundle exec rake db:migrate:down VERSION=20230623192532 && bundle exec rake db:migrate:down VERSION=20230623193009 && bundle exec rake db:migrate:down VERSION=20230623193144 && gco db/structure.sql'
 
 alias vi='nvim'
 

@@ -28,6 +28,12 @@ nmap(
 )
 
 nmap(
+  '<leader>sc',
+  ":lua require('telescope.builtin').find_files({search_dirs = {'app/controllers'}})<cr>",
+  "[S]earch [C]ontrollers"
+)
+
+nmap(
   '<leader>ss',
   ":lua require('telescope.builtin').find_files({search_dirs = {'spec'}})<cr>",
   "[S]earch [S]pecs"
