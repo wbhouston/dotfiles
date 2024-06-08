@@ -7,7 +7,7 @@ return {
     config = function()
       vim.g.NERDTreeWinSize=50
 
-      nmap('<leader>N', ':NERDTree<cr>')
+      nmap('<leader>N', ':NERDTreeFind<cr>')
     end,
   },
 }
