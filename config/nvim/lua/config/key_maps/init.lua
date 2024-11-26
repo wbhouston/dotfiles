@@ -23,7 +23,7 @@ map('t', '<c-l>', '<c-\\><c-n><c-w>l')
 -- Telescope find_files for specific project directories
 nmap(
   '<leader>sa',
-  ":lua require('telescope.builtin').find_files({search_dirs = {'app', 'config/locales', 'config/routes.rb', 'src'}})<cr>",
+  ":lua require('telescope.builtin').find_files({search_dirs = {'app', 'config', 'src'}})<cr>",
   "[S]earch [A]pp Files"
 )
 
