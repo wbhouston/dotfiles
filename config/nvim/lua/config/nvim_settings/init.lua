@@ -12,6 +12,7 @@ vim.o.textwidth = 80
 vim.o.title = true
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.o.smartindent = false
 
 vim.cmd([[
 hi DiagnosticInfo ctermfg=239 ctermbg=109 guifg=#504945 guibg=#83a598
