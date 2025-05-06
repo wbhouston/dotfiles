@@ -7,7 +7,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # colorstuff
 export COLORTERM="truecolor"
 export BAT_THEME="gruvbox-dark"
-export THOR_MERGE='nvim -d $2 $1'
+export THOR_MERGE='nvim -d $1 $2'
+export EDITOR='nvim'
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -112,7 +113,7 @@ export VERBOSE_TESTS=true
 source $ZSH/oh-my-zsh.sh
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
-export PATH="/usr/local/opt/postgresql@9.4/bin:$PATH"
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
 eval "$(rbenv init -)"
 alias foredev='bundle exec foreman start -f ./Procfile.dev'
 alias master='git checkout main'
@@ -120,6 +121,7 @@ alias main='git checkout main'
 alias production='git checkout production'
 alias resource='source ~/.zshrc'
 alias docs='cd ~/Code/val-doc-storage'
+alias barcoder='cd ~/Code/val-barcoder'
 alias perm='git checkout feature-permission-redesign && git pull'
 alias ggpush='git push -u origin $(git_current_branch)'
 alias bump='bundle update'
@@ -132,12 +134,10 @@ alias rspq='VERBOSE_TESTS=false bundle exec rspec'
 alias gprune='git remote update --prune'
 alias gbranch='git --no-pager branch'
 
-alias 'rdbm'='rake db:migrate RAILS_ENV=development'
-alias 'rdbmt'='rake db:migrate RAILS_ENV=test'
-alias 'rdbr'='rake db:rollback RAILS_ENV=development'
-alias 'rdbrt'='rake db:rollback RAILS_ENV=test'
-
-alias 'as_migrate_down'='bundle exec rake db:migrate:down VERSION=20230623191918 && bundle exec rake db:migrate:down VERSION=20230623192532 && bundle exec rake db:migrate:down VERSION=20230623193009 && bundle exec rake db:migrate:down VERSION=20230623193144 && gco db/structure.sql'
+alias 'rdbm'='bundle exec rake db:migrate RAILS_ENV=development'
+alias 'rdbmt'='bundle exec rake db:migrate RAILS_ENV=test'
+alias 'rdbr'='bundle exec rake db:rollback RAILS_ENV=development'
+alias 'rdbrt'='bundle exec rake db:rollback RAILS_ENV=test'
 
 alias vi='nvim'
 
@@ -170,3 +170,4 @@ export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 function gitnotes {
   git --no-pager log origin/production..origin/main --no-merges --format='%s' --date=local
 }
+. "/Users/williamhouston/.deno/env"
