@@ -168,6 +168,6 @@ alias whitespace="sed 's/ /·/g;s/\t/￫/g;s/\r/§/g;s/$/¶/g'"
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 function gitnotes {
-  git --no-pager log origin/production..origin/main --no-merges --format='%s' --date=local
+  git --no-pager log origin/production..origin/main --no-merges --format='* %s' --date=local
 }
 . "/Users/williamhouston/.deno/env"
