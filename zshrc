@@ -4,12 +4,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# colorstuff
-export COLORTERM="truecolor"
-export BAT_THEME="gruvbox-dark"
-export THOR_MERGE='nvim -d $1 $2'
-export EDITOR='nvim'
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -82,7 +76,16 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# colorstuff
+export COLORTERM="truecolor"
+export BAT_THEME="gruvbox-dark"
+
 # export MANPATH="/usr/local/man:$MANPATH"
+
+# editor preferences
+export THOR_MERGE='nvim -d $1 $2'
+export EDITOR='nvim'
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -106,68 +109,54 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# my stuff
-# Rails tests print out a lot of stuff, including puts I add
-export VERBOSE_TESTS=true
+# Some random Mac Thing
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-source $ZSH/oh-my-zsh.sh
+# Postgres
+export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
+
+# General
 alias ibrew="arch -x86_64 /usr/local/bin/brew"
 alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
-export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
-eval "$(rbenv init -)"
-alias foredev='bundle exec foreman start -f ./Procfile.dev'
-alias master='git checkout main'
-alias main='git checkout main'
-alias production='git checkout production'
 alias resource='source ~/.zshrc'
-alias docs='cd ~/Code/val-doc-storage'
-alias barcoder='cd ~/Code/val-barcoder'
-alias perm='git checkout feature-permission-redesign && git pull'
-alias ggpush='git push -u origin $(git_current_branch)'
-alias bump='bundle update'
-
-alias gnotes='cd ~/Notes && git add -A && git commit -m "notes" && git push && cd -'
-alias rc='bundle exec rails console'
 alias rgrep='grep -r'
-alias rsp='bundle exec rspec'
-alias rspq='VERBOSE_TESTS=false bundle exec rspec'
-alias gprune='git remote update --prune'
-alias gbranch='git --no-pager branch'
-
-alias 'rdbm'='bundle exec rake db:migrate RAILS_ENV=development'
-alias 'rdbmt'='bundle exec rake db:migrate RAILS_ENV=test'
-alias 'rdbr'='bundle exec rake db:rollback RAILS_ENV=development'
-alias 'rdbrt'='bundle exec rake db:rollback RAILS_ENV=test'
-
 alias vi='nvim'
+alias whitespace="sed 's/ /·/g;s/\t/￫/g;s/\r/§/g;s/$/¶/g'"
 
-function cg {
-  rgrep $1 app* config* *spec*
-}
+eval "$(rbenv init -)"
 
 function dirtouch {
   mkdir -p "$(dirname $1)" && touch "$1"
-}
-
-function gco {
-  git checkout $1
-}
-
-function gpull {
-  git pull
 }
 
 function strlen {
   tmp=$1; echo ${#tmp}
 }
 
-alias whitespace="sed 's/ /·/g;s/\t/￫/g;s/\r/§/g;s/$/¶/g'"
+# Rails
+alias foredev='bundle exec foreman start -f ./Procfile.dev'
+alias main='git checkout main'
+alias production='git checkout production'
+alias rc='bundle exec rails console'
+alias rdbm='bundle exec rake db:migrate RAILS_ENV=development'
+alias rdbr='bundle exec rake db:rollback RAILS_ENV=development'
+alias rsp='VERBOSE_TESTS=true bundle exec rspec'
+alias rspq='VERBOSE_TESTS=false bundle exec rspec'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias docs='cd ~/Code/val-doc-storage'
+alias barcoder='cd ~/Code/val-barcoder'
 
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+# Git
+alias gbranch='git --no-pager branch'
+alias ggpush='git push -u origin $(git_current_branch)'
+alias gnotes='cd ~/Notes && git add -A && git commit -m "notes" && git push && cd -'
+alias gprune='git remote update --prune'
 
 function gitnotes {
   git --no-pager log origin/production..origin/main --no-merges --format='* %s' --date=local
 }
-. "/Users/williamhouston/.deno/env"
+
+# Bundler
+alias bump='bundle update'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
