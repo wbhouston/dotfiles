@@ -1,6 +1,5 @@
 require('utils')
 require('nvim_kickstart')
-require('lsp.solargraph')
 require('config.key_maps')
 require('config.nvim_settings')
 require('tools')

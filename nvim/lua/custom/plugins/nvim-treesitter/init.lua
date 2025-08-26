@@ -1,6 +1,8 @@
 return { -- Highlight, edit, and navigate code
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = { "OXY2DEV/markview.nvim" },
 	build = ":TSUpdate",
+	lazy = false,
 	main = "nvim-treesitter.configs", -- Sets main module to use for opts
 	-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 	opts = {

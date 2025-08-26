@@ -109,6 +109,9 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# neovim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Some random Mac Thing
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
@@ -160,3 +163,7 @@ function gitnotes {
 alias bump='bundle update'
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
