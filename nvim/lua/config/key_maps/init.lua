@@ -27,6 +27,37 @@ nmap('<leader>q', ':bp<bar>sp<bar>bn<bar>bd<cr>')
 -- Could be replaced by tpope's NERDTree alternative
 nmap('<leader>cp', ':let @* = expand("%")<cr>')
 
+-- Taken from https://stackoverflow.com/questions/916875/yank-file-name-path-of-current-buffer-in-vim
+-- copy current file name (relative/absolute) to system clipboard
+if vim.fn.has("mac") == 1 or vim.fn.has("gui_macvim") == 1 or vim.fn.has("gui_mac") == 1 then
+  -- relative path  (src/foo.txt)
+  --nnoremap <leader>cf :let @*=expand("%")<CR>
+  nmap('<leader>cp', ':let @* = expand("%")<cr>')
+
+  -- absolute path  (/something/src/foo.txt)
+  -- nnoremap <leader>cF :let @*=expand("%:p")<CR>
+
+  -- filename       (foo.txt)
+  -- nnoremap <leader>ct :let @*=expand("%:t")<CR>
+
+  -- directory name (/something/src)
+  -- nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
+else
+  -- relative path (src/foo.txt)
+  -- nnoremap <leader>cf :let @+=expand("%")<CR>
+  nmap('<leader>cp', ':let @+ = expand("%")<cr>')
+
+  -- absolute path (/something/src/foo.txt)
+  -- nnoremap <leader>cF :let @+=expand("%:p")<CR>
+
+  -- filename (foo.txt)
+  -- nnoremap <leader>ct :let @+=expand("%:t")<CR>
+
+  -- directory name (/something/src)
+  -- nnoremap <leader>ch :let @+=expand("%:p:h")<CR>
+end
+-- End https://stackoverflow.com/questions/916875/yank-file-name-path-of-current-buffer-in-vim
+
 -- Missing the function here? This is supposed to delete quicklist items
 vim.cmd([[
 autocmd FileType qf map <buffer> dd :RemoveQFItem<c-r>

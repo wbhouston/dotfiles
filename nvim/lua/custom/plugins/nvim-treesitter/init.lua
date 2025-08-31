@@ -4,7 +4,6 @@ return { -- Highlight, edit, and navigate code
 	build = ":TSUpdate",
 	lazy = false,
 	main = "nvim-treesitter.configs", -- Sets main module to use for opts
-	-- [[ Configure Treesitter ]] See `:help nvim-treesitter`
 	opts = {
 		ensure_installed = {
 			"bash",
@@ -32,6 +31,17 @@ return { -- Highlight, edit, and navigate code
 		},
 		indent = { enable = false, disable = { "ruby", "slim" } },
 	},
+	config = function()
+		require("markview").setup({
+				markdown = {
+						headings = {
+								heading_1 = { icon_hl = "@markup.link", icon = "[%d] " },
+								heading_2 = { icon_hl = "@markup.link", icon = "[%d.%d] " },
+								heading_3 = { icon_hl = "@markup.link", icon = "[%d.%d.%d] " }
+						}
+				}
+		});
+	end,
 	-- There are additional nvim-treesitter modules that you can use to interact
 	-- with nvim-treesitter. You should go explore a few and see what interests you:
 	--

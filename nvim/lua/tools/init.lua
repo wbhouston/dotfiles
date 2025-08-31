@@ -1,3 +1,9 @@
+function GotoJournal()
+  local date = os.date( "%Y-%m-%d", os.time() - 5 * 60 * 60 )
+  local filepath = 'journal/day/' .. date .. '.md'
+  vim.cmd("vi " .. filepath)
+end
+
 function PKMGoto()
   local line = vim.fn.getline('.')
   local pos = vim.fn.getpos('.')
@@ -50,7 +56,6 @@ function PKMGoto()
 end
 
 function PKMSettings()
-  vim.o.columns = 200
   vim.o.linebreak = true
   vim.o.colorcolumn = '0'
 
@@ -62,4 +67,5 @@ function PKMSettings()
 end
 
 nmap("<leader>pkm", ":lua PKMSettings()<cr>", "Open PKM index with NERDTree and Aerial")
-nmap("<leader>pkg", ":lua PKMGoto()<cr>", "Open PKM file under cursor")
+nmap("gl", ":lua PKMGoto()<cr>", "Open PKM file under cursor")
+nmap("gj", ":lua GotoJournal()<cr>", "Open Journal")
