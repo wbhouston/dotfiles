@@ -57,6 +57,7 @@ end
 
 function PKMSettings()
   vim.o.linebreak = true
+  vim.o.wrap = true
   vim.o.colorcolumn = '0'
 
   vim.cmd([[NERDTree]])

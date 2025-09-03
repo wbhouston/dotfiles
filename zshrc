@@ -112,6 +112,10 @@ export EDITOR='nvim'
 # neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
+# C/CPP
+export CC="/usr/bin/gcc"
+export CXX="/usr/bin/gcc"
+
 # Some random Mac Thing
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 

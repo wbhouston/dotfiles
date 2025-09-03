@@ -58,6 +58,9 @@ else
 end
 -- End https://stackoverflow.com/questions/916875/yank-file-name-path-of-current-buffer-in-vim
 
+-- delete current file
+nmap('<leader>df', ':call delete(expand("%")) | bd!<cr>')
+
 -- Missing the function here? This is supposed to delete quicklist items
 vim.cmd([[
 autocmd FileType qf map <buffer> dd :RemoveQFItem<c-r>
