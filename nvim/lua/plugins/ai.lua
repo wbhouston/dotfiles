@@ -10,4 +10,12 @@ return {
       vim.g.copilot_no_tab_map = true
     end,
   },
+  {
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+  }
 }

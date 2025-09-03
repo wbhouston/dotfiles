@@ -1,7 +1,7 @@
-require('utils')
-require('nvim_kickstart')
-require('config.key_maps')
 require('config.nvim_settings')
+require('utils')
+require('config.key_maps')
+require('core.lazy')
 require('tools')
 require('snippets')
 
