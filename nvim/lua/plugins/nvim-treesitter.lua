@@ -37,5 +37,7 @@ return {
 						}
 				}
 		});
+		require("markview.extras.checkboxes").setup();
+		nmap("<leader>tt", ":Checkbox toggle<cr>");
 	end,
 }

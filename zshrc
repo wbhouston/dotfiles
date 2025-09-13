@@ -113,8 +113,8 @@ export EDITOR='nvim'
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # C/CPP
-export CC="/usr/bin/gcc"
-export CXX="/usr/bin/gcc"
+# export CC="/usr/bin/gcc"
+# export CXX="/usr/bin/gcc"
 
 # Some random Mac Thing
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
@@ -140,6 +140,11 @@ function strlen {
   tmp=$1; echo ${#tmp}
 }
 
+# Shortcuts to code repos
+alias docs='cd ~/Code/val-doc-storage'
+alias barcoder='cd ~/Code/val-barcoder'
+alias pkm='cd ~/code/pkm'
+
 # Rails
 alias foredev='bundle exec foreman start -f ./Procfile.dev'
 alias main='git checkout main'
@@ -149,9 +154,6 @@ alias rdbm='bundle exec rake db:migrate RAILS_ENV=development'
 alias rdbr='bundle exec rake db:rollback RAILS_ENV=development'
 alias rsp='VERBOSE_TESTS=true bundle exec rspec'
 alias rspq='VERBOSE_TESTS=false bundle exec rspec'
-
-alias docs='cd ~/Code/val-doc-storage'
-alias barcoder='cd ~/Code/val-barcoder'
 
 # Git
 alias gbranch='git --no-pager branch'

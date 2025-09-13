@@ -1,6 +1,6 @@
 function write_mappings_to_file()
   vim.cmd([[
-    :redir! > ~/Dotfiles/nvim_mappings.txt
+    :redir! > ~/code/dotfiles/nvim_mappings.txt
     :silent verbose map
     :redir END
   ]])
@@ -19,6 +19,10 @@ map('t', '<c-j>', '<c-\\><c-n><c-w>j')
 map('t', '<c-k>', '<c-\\><c-n><c-w>k')
 map('t', '<c-h>', '<c-\\><c-n><c-w>h')
 map('t', '<c-l>', '<c-\\><c-n><c-w>l')
+
+-- Use c-m for page down
+map('n', '<c-m>', '<c-d>')
+map('n', '<c-n>', '<c-e>')
 
 -- Close the current buffer and return to the previous buffer
 nmap('<leader>q', ':bp<bar>sp<bar>bn<bar>bd<cr>')
