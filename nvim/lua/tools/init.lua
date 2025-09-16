@@ -1,3 +1,7 @@
+function GotoTodo()
+  vim.cmd("vi todo.md")
+end
+
 function GotoJournal()
   local date = os.date( "%Y-%m-%d", os.time() - 5 * 60 * 60 )
   local filepath = 'journal/day/' .. date .. '.md'
@@ -70,3 +74,4 @@ end
 nmap("<leader>pkm", ":lua PKMSettings()<cr>", "Open PKM index with NERDTree and Aerial")
 nmap("gl", ":lua PKMGoto()<cr>", "Open PKM file under cursor")
 nmap("gj", ":lua GotoJournal()<cr>", "Open Journal")
+nmap("gt", ":lua GotoTodo()<cr>", "Open TODO")
