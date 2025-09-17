@@ -23,6 +23,8 @@ map('t', '<c-l>', '<c-\\><c-n><c-w>l')
 -- Use c-m for page down
 map('n', '<c-m>', '<c-d>')
 map('n', '<c-n>', '<c-e>')
+map('v', '<c-m>', '<c-d>')
+map('v', '<c-n>', '<c-e>')
 
 -- Close the current buffer and return to the previous buffer
 nmap('<leader>q', ':bp<bar>sp<bar>bn<bar>bd<cr>')
