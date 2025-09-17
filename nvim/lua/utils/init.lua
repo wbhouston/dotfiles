@@ -1,5 +1,5 @@
 function map(mode, shortcut, command, opts)
-  merged_opts = {}
+  local merged_opts = {}
   if opts then
     merged_opts = { noremap = true, silent = true, unpack(opts) }
   else
