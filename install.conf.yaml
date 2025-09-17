@@ -5,13 +5,13 @@
 - clean: ['~']
 
 - link:
-    ~/.config:
-        create: true
-        glob: true
-        path: config/*
+    ~/.config/nvim:
+        path: nvim
     ~/.zshrc:
+        path: zshrc
 
 - create:
+    - ~/.config
     - ~/.vim/undo-history
     - ~/local/share/nvim/site/pack/packer/start/packer.nvim
     - ~/local/nerd-fonts
