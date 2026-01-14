@@ -143,7 +143,8 @@ function strlen {
 # Shortcuts to code repos
 alias docs='cd ~/Code/val-doc-storage'
 alias barcoder='cd ~/Code/val-barcoder'
-alias pkm='cd ~/code/pkm && git add --all && git commit -m "regular commit" || vi'
+alias pkm_commit='git pull && git add --all && git commit -m "regular commit" && git push'
+alias pkm='cd ~/code/pkm; git pull; vi +PKMSettings; pkm_commit'
 
 # Rails
 alias foredev='bundle exec foreman start -f ./Procfile.dev'
