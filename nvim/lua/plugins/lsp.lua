@@ -8,6 +8,7 @@ return {
         -- LSP servers
         "lua_ls",
         "clangd",
+        "ruby-lsp",
 
         -- Formatters
         "stylua",

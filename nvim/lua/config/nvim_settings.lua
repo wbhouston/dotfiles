@@ -45,6 +45,8 @@ hi DiagnosticError ctermfg=167 ctermbg=235 gui=bold,reverse guifg=#fb4934 guibg=
 vim.cmd([[autocmd! CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})]])
 vim.diagnostic.config({ virtual_text = false })
 
+vim.cmd([[autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>]])
+
 -- from https://github.com/neovim/nvim-lspconfig/wiki/UI-Customization#show-line-diagnostics-automatically-in-hover-window
 vim.api.nvim_create_autocmd("CursorHold", {
 	buffer = bufnr,

@@ -13,6 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({ import = "plugins" }, {
+  dev = {
+    path = "~/Code/",
+  },
   install = {
     missing = true,
     colorscheme = { "gruvbox" }

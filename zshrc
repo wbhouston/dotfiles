@@ -168,6 +168,9 @@ function gitnotes {
 # Bundler
 alias bump='bundle update'
 
+# DEno
+. "/Users/williamhouston/.deno/env"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export NVM_DIR="$HOME/.nvm"
