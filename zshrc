@@ -86,7 +86,6 @@ export BAT_THEME="gruvbox-dark"
 export THOR_MERGE='nvim -d $1 $2'
 export EDITOR='nvim'
 
-
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
@@ -116,15 +115,7 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 # export CC="/usr/bin/gcc"
 # export CXX="/usr/bin/gcc"
 
-# Some random Mac Thing
-export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-
-# Postgres
-export PATH="/usr/local/opt/postgresql@16/bin:$PATH"
-
 # General
-alias ibrew="arch -x86_64 /usr/local/bin/brew"
-alias intel="env /usr/bin/arch -x86_64 /bin/zsh --login"
 alias resource='source ~/.zshrc'
 alias rgrep='grep -r'
 alias vi='nvim'
@@ -140,9 +131,7 @@ function strlen {
   tmp=$1; echo ${#tmp}
 }
 
-# Shortcuts to code repos
-alias docs='cd ~/Code/val-doc-storage'
-alias barcoder='cd ~/Code/val-barcoder'
+# Pkm
 alias pkm_commit='git pull && git add --all && git commit -m "regular commit" && git push'
 alias pkm='cd ~/code/pkm; git pull; vi +PKMSettings; pkm_commit'
 
@@ -169,11 +158,4 @@ function gitnotes {
 # Bundler
 alias bump='bundle update'
 
-# DEno
-. "/Users/williamhouston/.deno/env"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
