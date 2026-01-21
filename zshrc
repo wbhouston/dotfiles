@@ -154,6 +154,19 @@ alias gprune='git remote update --prune'
 function gitnotes {
   git --no-pager log origin/production..origin/main --no-merges --format='* %s' --date=local
 }
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+function gbin {
+  echo branch \($1\) has these commits and \($(parse_git_branch)\) does not
+  git --no-pager log ..$1 --no-merges --format='%h | Author:%an | Date:%ad | %s' --date=local $2
+}
+
+function gbout {
+  echo branch \($(parse_git_branch)\) has these commits and \($1\) does not
+  git --no-pager log $1.. --no-merges --format='%h | Author:%an | Date:%ad | %s' --date=local $2
+}
 
 # Bundler
 alias bump='bundle update'
