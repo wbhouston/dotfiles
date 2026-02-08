@@ -133,7 +133,7 @@ function strlen {
 
 # Pkm
 alias pkm_commit='git pull && git add --all && git commit -m "regular commit" && git push'
-alias pkm='cd ~/code/pkm; git pull; pkm_commit'
+alias pkm='cd ~/code/pkm; git pull; pkm_commit; cd -'
 
 # Rails
 alias foredev='bundle exec foreman start -f ./Procfile.dev'
