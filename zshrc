@@ -171,4 +171,7 @@ function gbout {
 # Bundler
 alias bump='bundle update'
 
+# Build all diagrams
+alias make_diagrams='find ~/code/pkm/diagrams -type f -maxdepth 1 -name "*.mermaid" -exec mmdc -i {} \;'
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

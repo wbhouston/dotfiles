@@ -12,8 +12,8 @@ export PATH="/opt/cloud66/bin:${PATH}"
 export PATH="$HOME/.cargo/bin:$PATH"
 
 # Shortcuts to code repos
-alias docs='cd ~/Code/val-doc-storage'
-alias barcoder='cd ~/Code/val-barcoder'
+alias docs='cd ~/code/val-doc-storage'
+alias barcoder='cd ~/code/val-barcoder'
 
 # Postgres
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
