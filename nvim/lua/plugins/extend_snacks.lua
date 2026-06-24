@@ -13,5 +13,12 @@ return {
       end,
       desc = "Show incomplete todo items",
     },
+    {
+      "<leader>fm",
+      function()
+        Snacks.rename.rename_file()
+      end,
+      desc = "Move/Rename File",
+    },
   },
 }
