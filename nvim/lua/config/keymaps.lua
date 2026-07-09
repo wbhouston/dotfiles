@@ -9,6 +9,80 @@
 --
 -- If an item is moved to that heading, it will be added the `done` label
 
+local map = LazyVim.safe_keymap_set
+
+map("n", "<leader>pr", function()
+  Snacks.bufdelete.all()
+  vim.cmd("only")
+end, { desc = "Reset windows and buffers" })
+
+-- Taken from folke/snacks.nvim/blob/main/lua/snacks/explorer/actions.lua
+local M = {}
+
+---@param path string
+function M.get_trash_cmds(path)
+  ---@type string[][]
+  local ret = {
+    { "trash", path }, -- trash-cli (Python or Node.js)
+    { "gio", "trash", path }, -- Most universally available on modern Linux
+    { "kioclient5", "move", path, "trash:/" }, -- KDE Plasma 5
+    { "kioclient", "move", path, "trash:/" }, -- KDE Plasma 6
+  }
+  if vim.fn.has("win32") == 1 then
+    ret[#ret + 1] = {
+      "powershell",
+      "-NoProfile",
+      "-Command",
+      (
+        "Add-Type -AssemblyName Microsoft.VisualBasic; "
+        .. "[Microsoft.VisualBasic.FileIO.FileSystem]::"
+        .. (vim.fn.isdirectory(path) == 0 and "DeleteFile" or "DeleteDirectory")
+        .. "('%s','OnlyErrorDialogs', 'SendToRecycleBin')"
+      ):format(path:gsub("\\", "\\\\"):gsub("'", "''")),
+    }
+  end
+  return ret
+end
+
+---@param path string
+function M.trash(path)
+  for _, cmd in ipairs(M.get_trash_cmds(path)) do
+    if vim.fn.executable(cmd[1]) == 1 then
+      local ok, ret = pcall(vim.fn.system, cmd)
+      if not ok or vim.v.shell_error ~= 0 then
+        return false,
+          ("- cmd: `%s`\n- error: %s"):format(table.concat(cmd, " "), type(ret) == "string" and ret or "Unknown error")
+      end
+      return true
+    end
+  end
+
+  -- Fallback to delete
+  local ok, ret = pcall(vim.fn.delete, path, "rf")
+  if not ok or ret ~= 0 then
+    return false, type(ret) == "string" and ret or "Unknown error"
+  end
+  return true
+end
+
+map("n", "<leader>fd", function()
+  local path = vim.api.nvim_buf_get_name(0)
+  if path == "" then
+    vim.notify("No file associated with the current buffer", vim.log.levels.WARN)
+    return
+  end
+
+  -- Prompt for confirmation before deleting
+  vim.ui.select({ "Yes, delete it", "Cancel" }, {
+    prompt = "Permanently delete file from filesystem? \n" .. path,
+  }, function(choice)
+    if choice == "Yes, delete it" then
+      M.trash(path)
+      Snacks.bufdelete({ file = path, force = true })
+    end
+  end)
+end, { desc = "Delete File" })
+
 vim.keymap.set("n", "<C-x>", function()
   -- Customizable variables
   local label_done = "done:"
