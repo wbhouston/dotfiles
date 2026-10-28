@@ -21,4 +21,9 @@ return {
       desc = "Move/Rename File",
     },
   },
+  opts = {
+    notifier = {
+      timeout = 7000,
+    },
+  },
 }
