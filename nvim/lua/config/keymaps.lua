@@ -208,10 +208,10 @@ vim.keymap.set("n", "<C-x>", function()
   -- 6. Main toggle logic
   ------------------------------------------------------------------------------
   if has_done_index then
-    chunk[has_done_index] = removeLabel(chunk[has_done_index]):gsub("`" .. label_done .. ".-`", "`untoggled`")
+    -- chunk[has_done_index] = removeLabel(chunk[has_done_index]):gsub("`" .. label_done .. ".-`", "`untoggled`")
     chunk[1] = bulletToBlank(chunk[1])
     chunk[1] = removeLabel(chunk[1])
-    chunk[1] = insertLabelAfterBracket(chunk[1], "`untoggled`")
+    -- chunk[1] = insertLabelAfterBracket(chunk[1], "`untoggled`")
     updateBufferWithChunk(chunk)
     vim.notify("Untoggled", vim.log.levels.INFO)
   elseif has_untoggled_index then
@@ -230,45 +230,46 @@ vim.keymap.set("n", "<C-x>", function()
     end)
     chunk[1] = bulletToX(chunk[1])
     chunk[1] = insertLabelAfterBracket(chunk[1], "`" .. label_done .. " " .. timestamp .. "`")
+    updateBufferWithChunk(chunk)
     -- Remove chunk from the original lines
-    for i = chunk_end, chunk_start, -1 do
-      table.remove(lines, i + 1)
-    end
+    -- for i = chunk_end, chunk_start, -1 do
+    --   table.remove(lines, i + 1)
+    -- end
     -- Append chunk under 'tasks_heading'
-    local heading_index = nil
-    for i, line in ipairs(lines) do
-      if line:match("^" .. tasks_heading) then
-        heading_index = i
-        break
-      end
-    end
-    if heading_index then
-      for _, cLine in ipairs(chunk) do
-        table.insert(lines, heading_index + 1, cLine)
-        heading_index = heading_index + 1
-      end
-      -- Remove any blank line right after newly inserted chunk
-      local after_last_item = heading_index + 1
-      if lines[after_last_item] == "" then
-        table.remove(lines, after_last_item)
-      end
-    else
-      table.insert(lines, tasks_heading)
-      for _, cLine in ipairs(chunk) do
-        table.insert(lines, cLine)
-      end
-      local after_last_item = #lines + 1
-      if lines[after_last_item] == "" then
-        table.remove(lines, after_last_item)
-      end
-    end
+    -- local heading_index = nil
+    -- for i, line in ipairs(lines) do
+    --   if line:match("^" .. tasks_heading) then
+    --     heading_index = i
+    --     break
+    --   end
+    -- end
+    -- if heading_index then
+    --   for _, cLine in ipairs(chunk) do
+    --     table.insert(lines, heading_index + 1, cLine)
+    --     heading_index = heading_index + 1
+    --   end
+    --   -- Remove any blank line right after newly inserted chunk
+    --   local after_last_item = heading_index + 1
+    --   if lines[after_last_item] == "" then
+    --     table.remove(lines, after_last_item)
+    --   end
+    -- else
+    --   table.insert(lines, tasks_heading)
+    --   for _, cLine in ipairs(chunk) do
+    --     table.insert(lines, cLine)
+    --   end
+    --   local after_last_item = #lines + 1
+    --   if lines[after_last_item] == "" then
+    --     table.remove(lines, after_last_item)
+    --   end
+    -- end
     -- Update buffer content
-    vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+    -- vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
     vim.notify("Completed", vim.log.levels.INFO)
     -- Restore window view to preserve scroll position
-    api.nvim_win_call(win, function()
-      vim.fn.winrestview(view)
-    end)
+    -- api.nvim_win_call(win, function()
+    --   vim.fn.winrestview(view)
+    -- end)
   end
   -- Write changes and restore view to preserve folds
   -- "Update" saves only if the buffer has been modified since the last save
