@@ -1,31 +1,30 @@
 return {
-  {
-    "yetone/avante.nvim",
-    opts = {
-      behavior = {
-        auto_approve_tool_permissions = false,
-      },
-      providers = {
-        copilot = {
-          model = "gpt-4.1",
-        },
-      },
-      windows = {
-        ask = {
-          start_insert = false,
-        },
-      },
-    },
+  "olimorris/codecompanion.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
   },
-  {
-    "zbirenbaum/copilot.lua",
-    opts = {
-      filetypes = {
-        markdown = false,
-      },
-      suggestion = {
-        auto_trigger = true,
+  opts = {
+    adapters = {
+      http = {
+        ollamalocal = function()
+          return require("codecompanion.adapters").extend("openai_compatible", {
+            env = {
+              url = "http://localhost:11434",
+            },
+            schema = {
+              model = {
+                default = "qwen3.8:latest",
+              },
+            },
+          })
+        end,
       },
     },
+    interactions = {
+      chat = {
+        adapter = "ollamalocal",
+      },
+    },
+    log_level = "DEBUG",
   },
 }
