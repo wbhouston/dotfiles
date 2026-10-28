@@ -13,6 +13,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Shortcuts to code repos
 alias docs='cd ~/code/val-doc-storage'
+alias docs2='cd ~/code/val-doc-storage-2'
 alias barcoder='cd ~/code/val-barcoder'
 
 # Postgres
@@ -20,3 +21,8 @@ export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 # export LDFLAGS="-L/opt/homebrew/opt/postgresql@16/lib"
 # export CPPFLAGS="-I/opt/homebrew/opt/postgresql@16/include"
 # export PKG_CONFIG_PATH="/opt/homebrew/opt/postgresql@16/lib/pkgconfig"
+
+export JAVA_HOME="/Applications/Android Studio.app/Contents/jbr/Contents/Home"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+export CLOUD66_TOKEN=$(security find-generic-password -s "Cloud66_API_Token" -w)
